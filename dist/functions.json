@@ -1,6 +1,5 @@
 {
-    "allowErrorForDataTypeAny":true,
-    "allowRichDataForDataTypeAny":true,
+    "allowCustomDataForDataTypeAny":true,
     "functions": [
         {
             "description": "Adds two numbers.",
@@ -378,78 +377,21 @@
             ]
         },
         {
-          "id": "customFunctionReturnEntity",
-          "name": "customFunctionReturnEntity",
-          "description": "return value with rich data",
+          "id": "SetRichError",
+          "name": "SetRichError",
+          "description": "Custom errors as return value",
           "helpUrl": "http://dev.office.com",
           "parameters": [
             {
-              "name": "entityCase",
-              "description": "entityCase",
+              "name": "errorCase",
+              "description": "error case",
               "type": "number"
             }
           ]
         },
         {
-          "id": "customFunctionReturnEntityArray",
-          "name": "customFunctionReturnEntityArray",
-          "description": "return array with rich data",
-          "helpUrl": "http://dev.office.com",
-          "result": {
-            "dimensionality": "matrix"
-          },
-          "parameters": [
-            {
-              "name": "entityCase",
-              "description": "entityCase",
-              "type": "number"
-            }
-          ]
-        },
-        {
-          "id": "customFunctionEntityInput",
-          "name": "customFunctionEntityInput",
-          "description": "Accept entity as parameters",
-          "helpUrl": "http://dev.office.com",
-          "parameters": [
-            {
-              "name": "inputRichData",
-              "description": "inputRichData",
-              "type": "any"
-            },
-            {
-              "name": "attribute",
-              "description": "attribute",
-              "type": "string"
-            },
-            {
-              "name": "needStringify",
-              "description": "need stringify or not",
-              "type": "boolean",
-              "optional": true
-            }
-          ]
-        },
-        {
-          "id": "customFunctionEntityInputArray",
-          "name": "customFunctionEntityInputArray",
-          "description": "Accept entity as parameters in array",
-          "helpUrl": "http://dev.office.com",
-          "result": {
-            "dimensionality": "matrix"
-          },
-          "parameters": [
-            {
-              "name": "value",
-              "description": "allow entity",
-              "type": "any",
-              "dimensionality": "matrix"
-            }
-          ]
-        },
-        {
-          "id": "formattedNumberReturn",
-          "name": "formattedNumberReturn",
+          "id": "SetFormattedNumber",
+          "name": "SetFormattedNumber",
           "description": "return value with number format",
           "helpUrl": "http://dev.office.com",
           "parameters": [
@@ -461,18 +403,79 @@
           ]
         },
         {
-          "id": "formattedNumberReturnArray",
-          "name": "formattedNumberReturnArray",
-          "description": "return formatted number as array",
+          "id": "SetEntity",
+          "name": "SetEntity",
+          "description": "return value with rich data",
+          "helpUrl": "http://dev.office.com",
+          "parameters": [
+            {
+              "name": "entityCase",
+              "description": "entityCase",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "id": "SetWebImage",
+          "name": "SetWebImage",
+          "description": "return value with rich data",
+          "helpUrl": "http://dev.office.com",
+          "parameters": [
+            {
+              "name": "imageCase",
+              "description": "imageCase",
+              "type": "number"
+            }
+          ]
+        },
+        {
+          "id": "SetArray",
+          "name": "SetArray",
+          "description": "Custom errors as return array",
           "helpUrl": "http://dev.office.com",
           "result": {
             "dimensionality": "matrix"
           },
           "parameters": [
             {
-              "name": "formattedNumberCase",
-              "description": "formattedNumber Case",
+              "name": "testCase",
+              "description": "test case",
               "type": "number"
+            }
+          ]
+        },
+        {
+          "id": "getRichData",
+          "name": "getRichData",
+          "description": "Accept rich data as parameters",
+          "helpUrl": "http://dev.office.com",
+          "parameters": [
+            {
+              "name": "inputRichData",
+              "description": "inputRichData",
+              "type": "any"
+            },
+            {
+              "name": "attribute",
+              "description": "attribute",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "id": "getRichDataArray",
+          "name": "getRichDataArray",
+          "description": "Accept rich data as parameters in array",
+          "helpUrl": "http://dev.office.com",
+          "result": {
+            "dimensionality": "matrix"
+          },
+          "parameters": [
+            {
+              "name": "value",
+              "description": "rich data value",
+              "type": "any",
+              "dimensionality": "matrix"
             }
           ]
         }
